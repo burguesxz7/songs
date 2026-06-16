@@ -1,0 +1,74 @@
+import time
+import os
+from rich.console import Console
+from rich.live import Live
+
+console = Console()
+
+
+def clear():
+    os.system("cls" if os.name == "nt" else "clear")
+
+
+clear()
+
+
+def write(text, speed, cor="white"):
+    linha = ""
+
+    with Live("", console=console, refresh_per_second=20, transient=True) as live:
+        for letra in text:
+            linha += letra
+            live.update(f"[{cor}]{linha}[/]")
+            time.sleep(speed)
+
+    console.print(f"[bold {cor}]{text}[/]")
+    time.sleep(0.6)
+
+def friendsChaseAtlantic():
+    clear()
+    
+    write ("what the hell were we?", 0.03, "cyan")
+    time.sleep(0)
+    
+    console.print()
+    
+    write("Tell me we weren't just friends", 0.04, "white")
+    time.sleep(1)
+    
+    console.print()
+
+    write ("This doesn't make much sense", 0.04, "cyan")
+    time.sleep(0.5)
+
+    write ("no", 0.01, "cyan")
+    time.sleep(1)
+
+    console.print()
+
+    write("But I'm not hurt, I'm tense", 0.04, "white")
+    console.print()
+
+    write ("'Cause I'll be fine without you, babe", 0.05, "cyan")
+    time.sleep(2.5)
+    
+    console.print()
+
+    write ("All of your friends have been here for too", 0.04, "white")
+    time.sleep(1)
+    
+    console.print()
+
+    write ("They must be waiting for you to move on", 0.04, "cyan")
+    time.sleep(0.5)
+    console.print()
+
+    write ("Girl, I'm not with it I'm way too far gone", 0.04, "white")
+    time.sleep(0.5)
+
+    console.print()
+    write ("I'm not ready, eyes heavy now", 0.03, "cyan")
+    time.sleep(6)
+    clear()
+
+friendsChaseAtlantic()
