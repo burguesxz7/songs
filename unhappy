@@ -1,0 +1,85 @@
+import time
+import os
+from rich.console import Console
+from rich.live import Live
+
+console = Console()
+
+
+def clear():
+    os.system("cls" if os.name == "nt" else "clear")
+
+
+clear()
+
+
+def write(text, speed, cor="white"):
+    linha = ""
+
+    with Live("", console=console, refresh_per_second=20, transient=True) as live:
+        for letra in text:
+            linha += letra
+            live.update(f"[{cor}]{linha}[/]")
+            time.sleep(speed)
+
+    console.print(f"[bold {cor}]{text}[/]")
+    time.sleep(0.6)
+
+def unhappys0rrow():
+    clear()
+   
+
+    write ("Every day we talk a little less", 0.05, "cyan")
+    time.sleep(1)
+
+    console.print()
+
+    write ("It looks like you are losing interest", 0.05, "white")
+    time.sleep(1.4)
+
+    console.print()
+
+    write("These feelings I have for you", 0.06, "cyan")
+    console.print() 
+
+    write("But you don't feel the same", 0.05, "white")
+    time.sleep(0.5)
+
+    console.print()
+
+    write("So I'll pack all my things And go run far away", 0.06, "cyan")
+    time.sleep(1)
+    
+    console.print()
+
+    write ("You are, you are very pretty",0.04, "white")
+    time.sleep(1)
+    console.print()
+
+    write("I'm so very ugly", 0.04, "cyan")
+    
+    console.print()
+
+    write("Will you even love me, anymore (love me)", 0.04, "white")
+
+    time.sleep(2)
+
+    console.print()
+
+    write ("You can, you can live without me", 0.04, "cyan")
+    time.sleep(1)
+
+    console.print()
+    
+    write ("That makes me unhappy", 0.04, "white")
+    time.sleep(1)
+    
+    console.print()
+
+    write("I should get a piercing through my heart", 0.05, "cyan")
+    time.sleep(7)
+
+
+
+    clear()
+unhappys0rrow()
