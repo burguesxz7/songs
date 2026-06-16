@@ -1,0 +1,87 @@
+import time
+import os
+from rich.console import Console
+from rich.live import Live
+
+console = Console()
+
+
+def clear():
+    os.system("cls" if os.name == "nt" else "clear")
+
+
+clear()
+
+
+def write(text, speed, cor="white"):
+    linha = ""
+
+    with Live("", console=console, refresh_per_second=20, transient=True) as live:
+        for letra in text:
+            linha += letra
+            live.update(f"[{cor}]{linha}[/]")
+            time.sleep(speed)
+
+    console.print(f"[bold {cor}]{text}[/]")
+    time.sleep(0.6)
+
+
+def conversa_evangelion():
+    clear()
+
+    write("-Resumindo, você é sozinho, Shinji.", 0.04, "cyan")
+    time.sleep(1)
+    
+    console.print()
+    
+    write("-Eu sou né?", 0.04, "green")
+    time.sleep(0.8)
+    
+    console.print()
+
+    write("-Isso é ser dependente, sabia?", 0.03, "cyan")
+    write("Não passa de uma relação simbiótica", 0.03, "cyan")
+    time.sleep(1.2)
+    
+    console.print()
+    
+    write("-Acho que deve ser isso", 0.04, "green")
+    time.sleep(0.8)
+    
+    console.print()
+    
+    write("-Pra falar bem a verdade, você só quer que as pessoas precisem de você", 0.04, "cyan")
+    time.sleep(1)
+    
+    console.print()
+    
+    write("-É, deve ser isso", 0.05, "green")
+    time.sleep(0.8)
+    
+    console.print()
+    
+    write("-Você só fica parado esperando que as pessoas te façam feliz.", 0.05, "cyan")
+    time.sleep(1)
+    
+
+    write("é uma felicidade de mentira", 0.03, "cyan")
+    time.sleep(1)
+
+    console.print()
+
+    write("isso também vale para você", 0.05, "gray")
+    
+
+    write("quem odeia á si mesmo ", 0.04, "gray")
+    time.sleep(0.01)
+    
+    write("nunca sera capaz de amar e confiar nos outros", 0.05, "gray")
+    time.sleep(5)
+    
+    console.print()
+
+
+    clear()
+
+
+conversa_evangelion()
